@@ -6,9 +6,7 @@
   }
   
   body {
-    background: linear-gradient(135deg, #FF9933 0%, #FF9933 25%, #FFF5E1 25%, #FFF5E1 75%, #138808 75%, #138808 100%);
-    background-size: 400% 400%;
-    animation: gradientBackground 15s ease infinite;
+    background: linear-gradient(135deg, #8e44ad, #3498db);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,28 +14,30 @@
     font-family: 'Arial', sans-serif;
     color: #333;
   }
-  .header {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .header h1 {
-    font-size: 36px;
-    color: #FF9933;
-    text-shadow: 1px 1px 2px #333;
-  }
-  @keyframes gradientBackground {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-  }
   
   .quiz-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100%;
     width: 100%;
+  }
+  
+  .header {
+    text-align: center;
+    margin-bottom: 20px;
+    transition: margin-top 0.3s;
+  }
+  
+  .header.down {
+    margin-top: 100px;
+  }
+  
+  .header h1 {
+    font-size: 36px;
+    color: #fff;
+    text-shadow: 1px 1px 2px #333;
   }
   
   .main {
@@ -50,8 +50,8 @@
   
   .container {
     width: 500px;
-    border: 2px solid #FF9933;
-    background-color: rgba(255, 255, 255, 0.95);
+    border: 2px solid #fff;
+    background-color: rgba(255, 255, 255, 0.9);
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
@@ -77,9 +77,9 @@
     cursor: pointer;
   }
   
-  .btn, .btn-submit {
+  .btn, .btn-submit, .btn-center {
     width: 48%;
-    background-color: #138808;
+    background-color: #3498db;
     transition: 0.3s;
     color: white;
     outline: none;
@@ -91,16 +91,22 @@
     border-radius: 5px;
   }
   
-  .btn:hover, .btn-submit:hover {
-    background-color: #0F6F05;
+  .btn:hover, .btn-submit:hover, .btn-center:hover {
+    background-color: #2980b9;
   }
   
   .btn-submit {
-    background-color: #FF9933;
+    background-color: #8e44ad;
+    width: 100%;
+    margin-top: 10px;
   }
   
   .btn-submit:hover {
-    background-color: #E58E00;
+    background-color: #732d91;
+  }
+  
+  .btn-center {
+    width: 100%;
   }
   
   .button-container {
@@ -119,6 +125,6 @@
   
   .score-text {
     font-size: 24px;
-    color: #333;
+    color: #fff;
   }
   
